@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muthuram ❤️ Sri Harini Devi</title>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================
+       RESET
+    ========================================= */
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html,
+    body {
+      width:100%;
+      height:100%;
+      overflow:hidden;
+    }
+
+    body {
+      font-family:"Montserrat", sans-serif;
+      background:#210705;
+      color:#ffffff;
+    }
+
+    /* =========================================
+       CSS VARIABLES
+    ========================================= */
+
+    :root {
+      --maroon:#3b0e0a;
+      --dark-maroon:#210705;
+      --red:#681c13;
+      --gold:#d5a447;
+      --bright-gold:#f4d38b;
+      --light-gold:#ffe9b0;
+      --cream:#fff8e8;
+    }
+
+    /* =========================================
+       ENTRY SCREEN
+    ========================================= */
+
+    .entry-screen {
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:radial-gradient(circle at center, rgba(210,157,62,0.25), transparent 55%), linear-gradient(135deg, #210705, #681c13, #3b0e0a, #210705);
+      transition:opacity 1s ease, visibility 1s ease;
+    }
+
+    .entry-screen.hide {
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+
+    /* =========================================
+       ENTRY CARD
+    ========================================= */
+
+    .entry-card {
+      position:relative;
+      width:100%;
+      max-width:500px;
+      padding:50px 40px;
+      text-align:center;
+      border:1px solid rgba(244,211,139,0.6);
+      border-radius:20px;
+      background:rgba(40,8,5,0.75);
+      backdrop-filter:blur(15px);
+      box-shadow:0 20px 70px rgba(0,0,0,0.5);
+      animation:entryReveal 1.5s ease forwards;
+    }
+
+    @keyframes entryReveal {
+      from {
+        opacity:0;
+        transform:translateY(30px) scale(0.9);
+      }
+
+      to {
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    /* =========================================
+       ENTRY DECORATION
+    ========================================= */
+
+    .entry-card::before {
+      content:"✦";
+      position:absolute;
+      top:15px;
+      left:20px;
+      color:var(--bright-gold);
+      font-size:20px;
+    }
+
+    .entry-card::after {
+      content:"✦";
+      position:absolute;
+      right:20px;
+      bottom:15px;
+      color:var(--bright-gold);
+      font-size:20px;
+    }
+
+    /* =========================================
+       ENTRY OM
+    ========================================= */
+
+    .entry-om {
+      font-size:45px;
+      margin-bottom:15px;
+      animation:omFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes omFloat {
+      0%,
+      100% {
+        transform:translateY(0);
+      }
+
+      50% {
+        transform:translateY(-8px);
+      }
+    }
+
+    /* =========================================
+       ENTRY TITLE
+    ========================================= */
+
+    .entry-title {
+      font-family:"Great Vibes", cursive;
+      font-size:55px;
+      font-weight:400;
+      color:var(--light-gold);
+      line-height:1;
+    }
+
+    .entry-subtitle {
+      margin-top:12px;
+      font-family:"Cinzel", serif;
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.8);
+    }
+
+    /* =========================================
+       ENTRY NAMES
+    ========================================= */
+
+    .entry-names {
+      margin-top:20px;
+      font-family:"Cinzel", serif;
+      font-size:20px;
+      color:var(--bright-gold);
+    }
+
+    /* =========================================
+       NAME INPUT
+    ========================================= */
+
+    .name-input {
+      width:100%;
+      height:52px;
+      margin-top:30px;
+      padding:0 20px;
+      border:1px solid rgba(244,211,139,0.5);
+      border-radius:10px;
+      outline:none;
+      background:rgba(255,255,255,0.08);
+      color:white;
+      font-family:"Montserrat", sans-serif;
+      font-size:14px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .name-input::placeholder {
+      color:rgba(255,255,255,0.6);
+    }
+
+    .name-input:focus {
+      border-color:var(--bright-gold);
+      box-shadow:0 0 20px rgba(244,211,139,0.15);
+    }
+
+    /* =========================================
+       SUBMIT BUTTON
+    ========================================= */
+
+    .submit-button {
+      width:100%;
+      height:52px;
+      margin-top:15px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      font-family:"Cinzel", serif;
+      font-size:13px;
+      letter-spacing:2px;
+      color:#3b0e0a;
+      background:linear-gradient(135deg, #d5a447, #ffe9b0, #d5a447);
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .submit-button:hover {
+      transform:translateY(-3px);
+      box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .submit-button:active {
+      transform:scale(0.97);
+    }
+
+    /* =========================================
+       WELCOME MESSAGE
+    ========================================= */
+
+    .welcome-message {
+      min-height:20px;
+      margin-top:8px;
+      font-size:12px;
+      color:var(--bright-gold);
+    }
+
+    /* =========================================
+       MAIN WEDDING SCREEN
+    ========================================= */
+
+    .wedding-screen {
+      position:relative;
+      width:100vw;
+      height:100vh;
+      min-height:580px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:radial-gradient(circle at 50% 45%, rgba(210,157,62,0.20) 0%, rgba(111,28,19,0.15) 30%, transparent 65%), linear-gradient(135deg, #210705 0%, #3b0e0a 25%, #681c13 50%, #3b0e0a 75%, #1d0604 100%);
+    }
+
+    /* =========================================
+       GOLDEN PARTICLE PATTERN
+    ========================================= */
+
+    .wedding-screen::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:0.18;
+      background-image:radial-gradient(circle, rgba(255,220,145,0.9) 1px, transparent 1px);
+      background-size:35px 35px;
+      animation:patternMove 25s linear infinite;
+    }
+
+    @keyframes patternMove {
+      0% {
+        background-position:0 0;
+      }
+
+      50% {
+        background-position:35px 35px;
+      }
+
+      100% {
+        background-position:0 0;
+      }
+    }
+
+    /* =========================================
+       GOLDEN GLOW
+    ========================================= */
+
+    .golden-glow {
+      position:absolute;
+      width:350px;
+      height:350px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,196,77,0.25), transparent 70%);
+      filter:blur(25px);
+      pointer-events:none;
+      animation:glowAnimation 8s ease-in-out infinite;
+    }
+
+    .glow-one {
+      top:-150px;
+      left:-120px;
+    }
+
+    .glow-two {
+      top:20%;
+      right:-150px;
+      animation-delay:2s;
+    }
+
+    .glow-three {
+      bottom:-180px;
+      left:35%;
+      animation-delay:4s;
+    }
+
+    @keyframes glowAnimation {
+      0%,
+      100% {
+        transform:translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform:translate(40px, -30px) scale(1.2);
+      }
+    }
+
+    /* =========================================
+       BORDER
+    ========================================= */
+
+    .border {
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(245,210,135,0.7);
+      pointer-events:none;
+      z-index:10;
+    }
+
+    .border::before,
+    .border::after {
+      content:"";
+      position:absolute;
+      width:100px;
+      height:100px;
+      border:2px solid var(--bright-gold);
+    }
+
+    .border::before {
+      top:-1px;
+      left:-1px;
+      border-right:none;
+      border-bottom:none;
+    }
+
+    .border::after {
+      right:-1px;
+      bottom:-1px;
+      border-left:none;
+      border-top:none;
+    }
+
+    /* =========================================
+       FLOWERS
+    ========================================= */
+
+    .flowers {
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:3;
+    }
+
+    .flower {
+      position:absolute;
+      top:-30px;
+      opacity:0;
+      animation:flowerFall linear infinite;
+    }
+
+    @keyframes flowerFall {
+      0% {
+        transform:translateY(-30px) rotate(0deg);
+        opacity:0;
+      }
+
+      10% {
+        opacity:0.8;
+      }
+
+      90% {
+        opacity:0.7;
+      }
+
+      100% {
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    /* =========================================
+       MAIN CONTENT
+    ========================================= */
+
+    .content {
+      position:relative;
+      z-index:15;
+      width:92%;
+      max-width:1050px;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+      animation:contentReveal 2s ease forwards;
+    }
+
+    @keyframes contentReveal {
+      from {
+        opacity:0;
+        transform:scale(0.9) translateY(30px);
+      }
+
+      to {
+        opacity:1;
+        transform:scale(1) translateY(0);
+      }
+    }
+
+    /* =========================================
+       OM
+    ========================================= */
+
+    .om {
+      font-size:42px;
+      margin-bottom:5px;
+      animation:omFloat 3s ease-in-out infinite;
+      filter:drop-shadow(0 0 12px rgba(244,211,139,0.7));
+    }
+	
+	.entry-om img,
+		.om img {
+		  width:70px;
+		  height:70px;
+		  object-fit:contain;
+		  filter:drop-shadow(0 0 12px rgba(244,211,139,0.7));
+		}
+
+		.entry-om img {
+		  animation:omFloat 3s ease-in-out infinite;
+		}
+
+		.om img {
+		  animation:omFloat 3s ease-in-out infinite;
+		}
+
+		@media (max-width:700px) {
+
+		  .entry-om img {
+			width:60px;
+			height:60px;
+		  }
+
+		  .om img {
+			width:50px;
+			height:50px;
+		  }
+
+		}
+		
+		.deity-images {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+  margin-bottom:15px;
+}
+
+.deity-image {
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 12px rgba(244,211,139,0.7));
+}
+
+.vinayagar-image {
+  width:90px;
+  height:90px;
+  animation:omFloat 3s ease-in-out infinite;
+}
+
+.krishnar-image,
+.kali-amman-image {
+  animation:omFloat 3s ease-in-out infinite;
+}
+
+.krishnar-image {
+  animation-delay:0.3s;
+}
+
+.kali-amman-image {
+  animation-delay:0.6s;
+}
+
+    /* =========================================
+       TOP TEXT
+    ========================================= */
+
+    .top-text {
+      font-family:"Cinzel", serif;
+      font-size:12px;
+      letter-spacing:5px;
+      text-transform:uppercase;
+      color:var(--light-gold);
+      margin-bottom:8px;
+    }
+
+    /* =========================================
+       TITLE
+    ========================================= */
+
+    .wedding-title {
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(58px, 8vw, 105px);
+      font-weight:400;
+      line-height:0.95;
+      color:var(--light-gold);
+      text-shadow:0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* =========================================
+       NAMES
+    ========================================= */
+
+    .names {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:25px;
+      margin-top:8px;
+      font-family:"Cinzel", serif;
+      font-size:clamp(21px, 3vw, 40px);
+      letter-spacing:2px;
+      color:#ffffff;
+    }
+
+    .heart {
+      color:#f3a59a;
+      font-size:32px;
+      animation:heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%,
+      100% {
+        transform:scale(1);
+      }
+
+      50% {
+        transform:scale(1.3);
+      }
+    }
+
+    /* =========================================
+       GUEST NAME
+    ========================================= */
+
+    .guest-name {
+      margin-top:5px;
+      font-family:"Great Vibes", cursive;
+      font-size:25px;
+      color:var(--bright-gold);
+      min-height:30px;
+    }
+
+    /* =========================================
+       DATE
+    ========================================= */
+
+    .date {
+      margin-top:5px;
+      font-family:"Cinzel", serif;
+      font-size:16px;
+      letter-spacing:6px;
+      color:var(--bright-gold);
+    }
+
+    /* =========================================
+       DIVIDER
+    ========================================= */
+
+    .divider {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:12px 0;
+    }
+
+    .divider-line {
+      width:70px;
+      height:1px;
+      background:var(--gold);
+    }
+
+    .divider-icon {
+      color:var(--bright-gold);
+      font-size:14px;
+    }
+
+    /* =========================================
+       EVENTS
+    ========================================= */
+
+    .events {
+      width:100%;
+      max-width:850px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .event {
+      padding:15px 20px;
+      border:1px solid rgba(245,211,139,0.35);
+      border-radius:15px;
+      background:rgba(0,0,0,0.18);
+      backdrop-filter:blur(8px);
+      transition:0.4s;
+    }
+
+    .event:hover {
+      transform:translateY(-5px);
+      border-color:var(--bright-gold);
+      background:rgba(255,255,255,0.08);
+    }
+
+    .event-icon {
+      font-size:25px;
+      margin-bottom:3px;
+    }
+
+    .event-title {
+      font-family:"Cinzel", serif;
+      font-size:13px;
+      letter-spacing:2px;
+      color:var(--bright-gold);
+    }
+
+    .event-place {
+      margin-top:5px;
+      font-size:12px;
+      line-height:1.5;
+      color:rgba(255,255,255,0.9);
+    }
+
+    /* =========================================
+       COUNTDOWN
+    ========================================= */
+
+    .countdown {
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      margin-top:14px;
+    }
+
+    .time {
+      min-width:60px;
+    }
+
+    .time strong {
+      display:block;
+      font-family:"Cinzel", serif;
+      font-size:24px;
+      color:var(--bright-gold);
+    }
+
+    .time small {
+      font-size:8px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.75);
+    }
+
+    /* =========================================
+       BOTTOM MESSAGE
+    ========================================= */
+
+    .bottom-message {
+      margin-top:10px;
+      font-family:"Great Vibes", cursive;
+      font-size:28px;
+      color:var(--light-gold);
+    }
+
+    /* =========================================
+       MUSIC BUTTON
+    ========================================= */
+
+    .music-button {
+      position:absolute;
+      top:35px;
+      right:55px;
+      z-index:50;
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      border:1px solid rgba(245,211,139,0.6);
+      background:rgba(0,0,0,0.2);
+      color:white;
+      cursor:pointer;
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width:700px) {
+
+      .entry-card {
+        padding:40px 25px;
+      }
+
+      .entry-title {
+        font-size:45px;
+      }
+
+      .entry-names {
+        font-size:16px;
+      }
+
+      .border {
+        inset:10px;
+      }
+
+      .border::before,
+      .border::after {
+        width:60px;
+        height:60px;
+      }
+
+      .music-button {
+        top:18px;
+        right:18px;
+        width:40px;
+        height:40px;
+      }
+
+      .content {
+        width:95%;
+        padding:25px 15px;
+      }
+
+      .om {
+        font-size:32px;
+      }
+
+      .top-text {
+        font-size:8px;
+        letter-spacing:3px;
+      }
+
+      .wedding-title {
+        font-size:58px;
+      }
+
+      .names {
+        flex-direction:column;
+        gap:2px;
+        font-size:21px;
+      }
+
+      .heart {
+        font-size:25px;
+      }
+
+      .guest-name {
+        font-size:22px;
+      }
+
+      .date {
+        font-size:12px;
+        letter-spacing:4px;
+      }
+
+      .divider {
+        margin:8px 0;
+      }
+
+      .events {
+        grid-template-columns:1fr;
+        gap:7px;
+      }
+
+      .event {
+        padding:9px 12px;
+      }
+
+      .event-icon {
+        font-size:18px;
+      }
+
+      .event-title {
+        font-size:10px;
+      }
+
+      .event-place {
+        font-size:9px;
+      }
+
+      .countdown {
+        gap:10px;
+        margin-top:8px;
+      }
+
+      .time {
+        min-width:45px;
+      }
+
+      .time strong {
+        font-size:18px;
+      }
+
+      .time small {
+        font-size:6px;
+      }
+
+      .bottom-message {
+        font-size:23px;
+      }
+
+    }
+
+    /* =========================================
+       SMALL SCREEN HEIGHT
+    ========================================= */
+
+    @media (max-height:680px) {
+
+      .wedding-title {
+        font-size:50px;
+      }
+
+      .names {
+        font-size:18px;
+      }
+
+      .guest-name {
+        font-size:20px;
+      }
+
+      .event {
+        padding:7px 10px;
+      }
+
+      .bottom-message {
+        display:none;
+      }
+
+    }
+	
+	@media (max-width:700px) {
+
+  .deity-images {
+    gap:10px;
+    margin-bottom:10px;
+  }
+
+  .deity-image {
+    width:48px;
+    height:48px;
+  }
+
+  .vinayagar-image {
+    width:65px;
+    height:65px;
+  }
+
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       ENTRY SCREEN
+  ========================================= -->
+  <div class="entry-screen" id="entryScreen">
+    <div class="entry-card">
+      <!-- OM -->
+<div class="deity-images">
+
+  <!-- KRISHNAR - LEFT -->
+ <!-- <img
+    src="assets/images/krishnar.png"
+    alt="Krishnar"
+    class="deity-image krishnar-image"
+  > -->
+
+  <!-- VINAYAGAR - CENTER -->
+  <img
+    src="assets/images/vinayagar.png"
+    alt="Vinayagar"
+    class="deity-image vinayagar-image"
+  >
+
+  <!-- KALI AMMAN - RIGHT -->
+  <!-- <img
+    src="assets/images/murugar.png"
+    alt="murugar"
+    class="deity-image kali-amman-image"
+  > -->
+
+</div>
+
+      <!-- TITLE -->
+      <div class="entry-title">
+        Wedding Invitation
+      </div>
+
+      <!-- SUBTITLE -->
+      <div class="entry-subtitle">
+        You are warmly invited
+      </div>
+
+      <!-- COUPLE -->
+      <div class="entry-names">
+        Muthuram ❤️ Sri Harini Devi
+      </div>
+
+      <!-- NAME INPUT -->
+      <input
+        type="text"
+        id="guestName"
+        class="name-input"
+        placeholder="Enter your name"
+        maxlength="40"
+        autocomplete="off"
+      >
+
+      <!-- SUBMIT -->
+      <button
+        type="button"
+        id="submitButton"
+        class="submit-button"
+      >
+        OPEN INVITATION
+      </button>
+
+      <!-- MESSAGE -->
+      <div
+        class="welcome-message"
+        id="welcomeMessage"
+      ></div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       MAIN WEDDING INVITATION
+  ========================================= -->
+  <div class="wedding-screen">
+    <!-- GOLDEN GLOW -->
+    <div class="golden-glow glow-one"></div>
+    <div class="golden-glow glow-two"></div>
+    <div class="golden-glow glow-three"></div>
+    <!-- BORDER -->
+    <div class="border"></div>
+    <!-- FLOWERS -->
+    <div
+      class="flowers"
+      id="flowers"
+    ></div>
+
+    <!-- MUSIC -->
+    <button
+      class="music-button"
+      id="musicButton"
+    >
+      🎵
+    </button>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <!-- OM -->
+<div class="deity-images">
+
+  <!-- KRISHNAR - LEFT -->
+ <!-- <img
+    src="assets/images/krishnar.png"
+    alt="Krishnar"
+    class="deity-image krishnar-image"
+  > -->
+
+  <!-- VINAYAGAR - CENTER -->
+  <img
+    src="assets/images/vinayagar.png"
+    alt="Vinayagar"
+    class="deity-image vinayagar-image"
+  >
+
+  <!-- KALI AMMAN - RIGHT -->
+ <!-- <img
+    src="assets/images/murugar.png"
+    alt="murugar"
+    class="deity-image kali-amman-image"
+  > -->
+
+</div>
+
+      <!-- TOP TEXT -->
+      <div class="top-text">
+        With The Blessings Of The Almighty
+      </div>
+
+      <!-- TITLE -->
+      <div class="wedding-title">
+        Wedding Invitation
+      </div>
+
+      <!-- NAMES -->
+      <div class="names">
+        <span>
+          Muthuram
+        </span>
+        <span class="heart">
+          ♥
+        </span>
+        <span>
+          Sri Harini Devi
+        </span>
+      </div>
+      <!-- GUEST NAME -->
+      <div
+        class="guest-name"
+        id="displayGuestName"
+      ></div>
+
+      <!-- DATE -->
+      <div class="date">
+        22 • 11 • 2026
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">
+          ✦
+        </span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- EVENTS -->
+      <div class="events">
+        <!-- MUHURTHAM -->
+        <div class="event">
+          <div class="event-icon">
+            🛕
+          </div>
+          <div class="event-title">
+            MUHURTHAM AT 6 AM IN
+          </div>
+          <div class="event-place">
+            Thiru Ilanji Kumarar Kovil
+            <br>
+            Ilanji
+          </div>
+        </div>
+
+        <!-- WEDDING HALL -->
+        <div class="event">
+          <div class="event-icon">
+            💐
+          </div>
+          <div class="event-title">
+            WEDDING CELEBRATION
+          </div>
+          <div class="event-place">
+            Sri Krishna Bhavan Border
+            <br>
+            Senkottai
+          </div>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown">
+        <div class="time">
+          <strong id="days">
+            00
+          </strong>
+          <small>
+            Days
+          </small>
+        </div>
+        <div class="time">
+          <strong id="hours">
+            00
+          </strong>
+          <small>
+            Hours
+          </small>
+        </div>
+
+        <div class="time">
+          <strong id="minutes">
+            00
+          </strong>
+          <small>
+            Minutes
+          </small>
+        </div>
+
+        <div class="time">
+          <strong id="seconds">
+            00
+          </strong>
+          <small>
+            Seconds
+          </small>
+        </div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="bottom-message">
+        Together Forever ❤️
+      </div>
+
+    </div>
+  </div>
+
+
+<audio
+  id="weddingMusic"
+  loop
+  preload="auto"
+>
+  <source
+    src="assets/audio/Ennai-Thalatta-Varuvala-Bgm.mp3"
+    type="audio/mpeg"
+  >
+</audio>
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+  <script>
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+    const entryScreen =
+      document.getElementById("entryScreen");
+    const guestNameInput =
+      document.getElementById("guestName");
+    const submitButton =
+      document.getElementById("submitButton");
+    const welcomeMessage =
+      document.getElementById("welcomeMessage");
+    const displayGuestName =
+      document.getElementById("displayGuestName");
+
+/* =========================================
+   SUBMIT INVITATION
+========================================= */
+
+submitButton.addEventListener("click", function() {
+  const guestName =
+    guestNameInput.value.trim();
+
+  if (guestName === "") {
+    welcomeMessage.innerText =
+      "Please enter your name to continue ❤️";
+    guestNameInput.focus();
+    return;
+  }
+
+  displayGuestName.innerText =
+    "Dear " +    guestName   + ", you are invited ❤️";
+
+  welcomeMessage.innerText =
+    "Welcome, " + guestName + " ❤️";
+
+  setTimeout(function() {
+    entryScreen.classList.add("hide");
+  }, 800);
+});
+
+    /* =========================================
+       ENTER KEY SUBMIT
+    ========================================= */
+    guestNameInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        submitButton.click();
+      }
+    });
+
+    /* =========================================
+       FLOWER ANIMATION
+    ========================================= */
+    const flowers =
+      document.getElementById("flowers");
+    const flowerSymbols = [
+      "🌸",
+      "🌺",
+      "🌼",
+      "✿",
+      "❀"
+    ];
+    for (let i = 0; i < 30; i++) {
+      const flower =
+        document.createElement("div");
+      flower.className =
+        "flower";
+      flower.innerText =
+        flowerSymbols[
+          Math.floor(
+            Math.random() * flowerSymbols.length
+          )
+        ];
+      flower.style.left =
+        Math.random() * 100 + "%";
+      flower.style.animationDuration =
+        7 + Math.random() * 10 + "s";
+      flower.style.animationDelay =
+        Math.random() * 10 + "s";
+      flower.style.fontSize =
+        10 + Math.random() * 14 + "px";
+      flowers.appendChild(flower);
+    }
+
+    /* =========================================
+       COUNTDOWN
+    ========================================= */
+
+    const weddingDate =
+      new Date("November 22, 2026 09:00:00").getTime();
+
+    function updateCountdown() {
+      const now =
+        new Date().getTime();
+      const difference =
+        weddingDate - now;
+      if (difference <= 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (difference %
+            (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (difference %
+            (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (difference %
+            (1000 * 60)) /
+          1000
+        );
+
+      document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+      document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+      document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+      document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+/* =========================================
+   MUSIC
+========================================= */
+
+const musicButton =
+  document.getElementById("musicButton");
+
+const weddingMusic =
+  document.getElementById("weddingMusic");
+
+let musicPlaying =
+  false;
+
+
+/* =========================================
+   START MUSIC WHEN OPEN INVITATION
+========================================= */
+
+submitButton.addEventListener("click", function() {
+
+  const guestName =
+    guestNameInput.value.trim();
+
+  if (guestName === "") {
+
+    welcomeMessage.innerText =
+      "Please enter your name to continue ❤️";
+
+    guestNameInput.focus();
+
+    return;
+
+  }
+
+  displayGuestName.innerText =
+    "Dear " + guestName + ", you are invited ❤️";
+
+  welcomeMessage.innerText =
+    "Welcome, " + guestName + " ❤️";
+
+
+  /* =========================================
+     PLAY WEDDING MUSIC
+  ========================================= */
+
+  weddingMusic.currentTime =
+    0;
+
+  weddingMusic.play()
+    .then(function() {
+
+      musicPlaying =
+        true;
+
+      musicButton.innerText =
+        "🔊";
+
+    })
+    .catch(function(error) {
+
+      console.error(
+        "Music playback failed:",
+        error
+      );
+
+    });
+
+
+  /* =========================================
+     HIDE ENTRY SCREEN
+  ========================================= */
+
+  setTimeout(function() {
+
+    entryScreen.classList.add("hide");
+
+  }, 800);
+
+});
+
+
+/* =========================================
+   MUSIC PLAY / PAUSE BUTTON
+========================================= */
+
+musicButton.addEventListener("click", function() {
+
+  if (weddingMusic.paused) {
+
+    weddingMusic.play()
+      .then(function() {
+
+        musicPlaying =
+          true;
+
+        musicButton.innerText =
+          "🔊";
+
+      })
+      .catch(function(error) {
+
+        console.error(
+          "Music playback failed:",
+          error
+        );
+
+      });
+
+  } else {
+
+    weddingMusic.pause();
+
+    musicPlaying =
+      false;
+
+    musicButton.innerText =
+      "🎵";
+
+  }
+
+});
+   
+
+  </script>
+</body>
+</html>
